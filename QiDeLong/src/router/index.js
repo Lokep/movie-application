@@ -22,21 +22,21 @@ const routes = [{
   },
   children: []
 }, {
-  path: '/',
+  path: 'movie',
   name: '电影',
   component: Movie,
   meta: {
     requireAuth: true
   }
 }, {
-  path: '/',
+  path: '/social',
   name: '社区',
   component: Social,
   meta: {
     requireAuth: true
   }
 }, {
-  path: '/',
+  path: '/user',
   name: '用户',
   component: User,
   meta: {
@@ -69,7 +69,7 @@ router.beforeEach((to, from, next) => {
   //     })
   //   }
   // } else {
-  //   next();
+     next();
   // }
 })
 
