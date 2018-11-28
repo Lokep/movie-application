@@ -1,3 +1,13 @@
+<style scoped>
+	
+</style>
 <template>
-  <div class="login">login</div>
+  <div class="login">
+  	
+  </div>
 </template>
+<script>
+	export default{
+
+	}
+</script>
