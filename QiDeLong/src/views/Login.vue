@@ -62,43 +62,81 @@
   		<van-tabs class="log-buttons ov" v-model="active">
 	  		<van-tab class="fl" title="登录">
 	  			<div class="sign-form">
-	  				<input type="text" placeholder="请输入你的账号">
-	  				<input type="text" placeholder="请输入你的密码">
-	  				<input type="button" value="登录">
+	  				<input v-for='(ipt,index) in login' 
+	  					:key='index' 
+	  					:type='ipt.Type' 
+	  					:placeholder="ipt.Placeholder" 
+	  					:value='ipt.Value'
+	  					ref='sc'
+						@focus='handleTyping'
+						@blur='cancelTyping' 
+	  					>
 	  			</div>
 	  		</van-tab>
 			<van-tab class="fr" title="注册">
 				<div class="sign-form">
-	  				<input type="text" placeholder="请输入你的昵称">
-	  				<input type="text" placeholder="请输入你的密码">
-	  				<input type="text" placeholder="请再次输入你的密码">
-	  				<input type="text" placeholder="请输入你的邮箱">
-	  				<input type="button" value="注册">
+	  				<input v-for='(ipt,index) in register' 
+		  				:key='index' 
+		  				:type='ipt.Type' 
+		  				:placeholder="ipt.Placeholder" 
+		  				:value='ipt.Value'
+		  				ref='sc'
+						@focus='handleTyping'
+						@blur='cancelTyping' 
+	  				>
 	  			</div>
 			</van-tab>
 		</van-tabs>	
   	</div>
 </template>
 <script>
+	// let interval = '';
+
 	export default{
+
 		data(){
 			return{
 				// selected:'selected'
-				active:2
+				active:2,
+				login:[
+					{Type:'text',Placeholder:'请输入你的账号',Value:''},
+					{Type:'text',Placeholder:'请输入你的密码',Value:''},
+					{Type:'button',Placeholder:'',Value:'登录'},
+				],
+				register:[
+					{Type:'text',Placeholder:'请输入你的账号',Value:''},
+					{Type:'text',Placeholder:'请输入你的密码',Value:''},
+					{Type:'text',Placeholder:'请再次输入你的密码',Value:''},
+					{Type:'text',Placeholder:'请输入你的邮箱',Value:''},
+					{Type:'button',Placeholder:'',Value:'注册'},
+				],
+				interval:''
 			}
 		},
 		methods:{
 			// switchMethods:function(e){
-			// 	console.log(e);
+			// 	console.log(e); 
 			// }
-			handleScroll(){
+			handleTyping(){
+				const that = this;
+				this.interval = setInterval(function(){
+                	that.$options.methods.scrollToEnd();
+				}, 500);
 				
-			}
+			},
+			cancelTyping(){
+				clearInterval(this.interval);
+			},
+			scrollToEnd() {
+		        // document.body.scrollTop = document.body.scrollHeight;
+		        //bug
+		        let sh = document.body.scrollHeight
+		        document.body.scrollTop = document.body.scrollHeight-50+'px';
+		    }
 
 		},
 		mounted(){
-			 window.addEventListener('scroll', this.handleScroll, true);
+			 // window.addEventListener('scroll', this.handleScroll, true);
 		}
 	}
 </script>
-
