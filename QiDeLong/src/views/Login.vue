@@ -115,7 +115,7 @@
 		},
 		methods:{
 			// switchMethods:function(e){
-			// 	console.log(e);
+			// 	console.log(e); 
 			// }
 			handleTyping(){
 				const that = this;
