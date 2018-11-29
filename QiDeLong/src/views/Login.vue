@@ -32,22 +32,21 @@
 		margin: .7rem auto;
 	}
 	.sign-form>input[type=text]{
-		width: 5.5rem;
-		height: 1.05rem;
-		/*-webkit-appearance:none;*/
-		border-bottom: 1px solid #1a1f25;
-		margin:0 auto .5rem;
-		font-size: .3rem;
+	    width: 5.5rem;
+	    height: .75rem;
+	    border-bottom: 1px solid #1a1f25;
+	    margin: 0 auto .5rem;
+	    font-size: .25rem;
 	}
 	.sign-form>input[type=text]:last-of-type{
 		margin-bottom: 1.75rem;
 	}
 	.sign-form>input[type=button]{
-		width: 5.5rem;
-		height: 1.05rem;
-		background-color: #1a1f25;
-		color: #fff;
-		font-size: .36rem;
+	    width: 5.5rem;
+	    height: .85rem;
+	    background-color: #1a1f25;
+	    color: #fff;
+	    font-size: .28rem;
 	}
 </style>
 <template>
@@ -62,14 +61,13 @@
   		<van-tabs class="log-buttons ov" v-model="active">
 	  		<van-tab class="fl" title="登录">
 	  			<div class="sign-form">
+	  				<!-- @focus='handleTyping'
+						@blur='cancelTyping'  -->
 	  				<input v-for='(ipt,index) in login' 
 	  					:key='index' 
 	  					:type='ipt.Type' 
 	  					:placeholder="ipt.Placeholder" 
 	  					:value='ipt.Value'
-	  					ref='sc'
-						@focus='handleTyping'
-						@blur='cancelTyping' 
 	  					>
 	  			</div>
 	  		</van-tab>
@@ -80,13 +78,12 @@
 		  				:type='ipt.Type' 
 		  				:placeholder="ipt.Placeholder" 
 		  				:value='ipt.Value'
-		  				ref='sc'
-						@focus='handleTyping'
-						@blur='cancelTyping' 
 	  				>
 	  			</div>
 			</van-tab>
 		</van-tabs>	
+
+
   	</div>
 </template>
 <script>
@@ -113,30 +110,36 @@
 				interval:''
 			}
 		},
+		metaInfo: {
+			title:'lokep--sign',
+			meta:[
+				{
+					name:'apple-mobile-web-app-status-bar-style',
+					content:'black'
+				}
+			]
+		},
 		methods:{
-			// switchMethods:function(e){
-			// 	console.log(e); 
-			// }
-			handleTyping(){
-				const that = this;
-				this.interval = setInterval(function(){
-                	that.$options.methods.scrollToEnd();
-				}, 500);
+			// handleTyping(){
+			// 	const that = this;
+			// 	this.interval = setInterval(function(){
+   //              	that.$options.methods.scrollToEnd();
+			// 	}, 500);
 				
-			},
-			cancelTyping(){
-				clearInterval(this.interval);
-			},
-			scrollToEnd() {
-		        // document.body.scrollTop = document.body.scrollHeight;
-		        //bug
-		        let sh = document.body.scrollHeight
-		        document.body.scrollTop = document.body.scrollHeight-50+'px';
-		    }
+			// },
+			// cancelTyping(){
+			// 	clearInterval(this.interval);
+			// },
+			// scrollToEnd() {
+		 //        // document.body.scrollTop = document.body.scrollHeight;
+		 //        //bug
+		 //        let sh = document.body.scrollHeight
+		 //        document.body.scrollTop = document.body.scrollHeight-50+'px';
+		 //    }
 
 		},
 		mounted(){
-			
+			// this.$toast('提示文案');用于登录注册时的错误提示
 		}
 	}
 </script>

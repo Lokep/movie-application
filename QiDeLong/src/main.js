@@ -4,12 +4,15 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import axios from 'axios'
-import Vant from 'vant';
-import 'vant/lib/index.css';
+import Vant from 'vant'
+import 'vant/lib/index.css'
+import Meta from 'vue-meta'
 
-Vue.use(Vant);
+Vue.use(Vant)
+Vue.use(Meta)
+
 Vue.config.productionTip = false
-Vue.prototype.$axios = axios;
+Vue.prototype.$axios = axios
 
 /* eslint-disable no-new */
 new Vue({
