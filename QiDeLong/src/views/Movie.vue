@@ -75,7 +75,6 @@ export default {
         for (let i = 0; i < 3; i++) {
           that.images.push(arr[i].images.small);
         }
-        console.log(this.images);
       });
     }
   }
@@ -125,5 +124,9 @@ export default {
   border-radius: 50%;
   float: left;
   margin-left: .2rem;
+}
+
+.swiper-indicator li.active {
+  background: red;
 }
 </style>

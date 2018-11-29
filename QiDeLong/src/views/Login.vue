@@ -73,7 +73,7 @@
 	  				<input type="text" placeholder="请输入你的密码">
 	  				<input type="text" placeholder="请再次输入你的密码">
 	  				<input type="text" placeholder="请输入你的邮箱">
-	  				<input type="button" value="登录">
+	  				<input type="button" value="注册">
 	  			</div>
 			</van-tab>
 		</van-tabs>	
