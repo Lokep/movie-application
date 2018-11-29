@@ -136,7 +136,7 @@
 
 		},
 		mounted(){
-			 // window.addEventListener('scroll', this.handleScroll, true);
+			
 		}
 	}
 </script>
