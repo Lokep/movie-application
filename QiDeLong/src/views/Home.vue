@@ -1,6 +1,6 @@
 <style>
 	.home{
-		
+		 
 	}
 	.home-head{
 		width:6.7rem;
