@@ -18,41 +18,77 @@
       </ul>
     </van-swipe>
     <van-tabs v-model="active" sticky color="#506cec">
-      <van-tab title="推荐">推荐</van-tab>
-      <van-tab title="热门">热门</van-tab>
-      <van-tab title="榜单">榜单</van-tab>
-      <van-tab title="专题">专题</van-tab>
+      <van-tab title="推荐">
+        <movie-grid v-for="(item, index) in coming_soon" :key="index" :movieInfo="item"></movie-grid>
+      </van-tab>
+      <van-tab title="热门">
+        <movie-grid v-for="(item, index) in in_theaters" :key="index" :movieInfo="item"></movie-grid>
+      </van-tab>
+      <van-tab title="榜单">
+        <movie-grid v-for="(item, index) in top250" :key="index" :movieInfo="item"></movie-grid>
+      </van-tab>
+      <van-tab title="专题">
+        <movie-grid v-for="(item, index) in coming_soon" :key="index" :movieInfo="item"></movie-grid>
+      </van-tab>
     </van-tabs>
   </div>
 
 </template>
 
 <script>
+import movieGrid from '@/components/movieGrid.vue'
 export default {
+  components: {
+    movieGrid
+  },
   data() {
     return {
       current: 0,
       images: [],
-      movieList: [],
+      in_theaters: [],
+      coming_soon: [],
+      top250: [],
       active: 0
     };
   },
   mounted() {
+    this.get_coming_soon()
+    this.get_in_theaters()
+    this.get_mtop250()
     this.showMovieList();
   },
   methods: {
     onChange(index) {
       this.current = index;
     },
-    showMovieList() {
+    get_coming_soon() {
+      this.$axios.get("/api/v2/movie/coming_soon").then(res => {
+        this.coming_soon = res.data.subjects;
+      });
+    },
+    get_in_theaters() {
       this.$axios.get("/api/v2/movie/in_theaters").then(res => {
-        this.movieList = res.data.subjects;
-        let arr = this.movieList,
-          that = this;
+        this.in_theaters = res.data.subjects;
+      });
+    },
+    get_mtop250() {
+      this.$axios.get("/api/v2/movie/top250").then(res => {
+        this.top250 = res.data.subjects;
+      });
+    },
+    showMovieList() {
+      this.$axios.get("/api/v2/movie/coming_soon").then(res => {
+        let arr = res.data.subjects, that = this;
         for (let i = 0; i < 3; i++) {
           that.images.push(arr[i].images.small);
         }
       });
+    }
+  },
+  watch: {
+    'active' (to, from) {
+      console.log('to', to)
+      console.log('from', from)
     }
   }
 };
