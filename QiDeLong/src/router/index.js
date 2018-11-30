@@ -1,17 +1,11 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
-// import Login from '@/views/Login'
-// import Home from '@/views/Home'
-// import Social from '@/views/Social'
-// import Movie from '@/views/Movie'
-// import User from '@/views/User'
-
-import Routes from './routes.js'
+import routes from './routes.js'
 
 Vue.use(Router)
 
-console.log(Routes);
+
 
 // if (window.localStorage.getItem('token')) {
 //   store.commit(types.LOGIN, window.localStorage.getItem('token'))
@@ -19,7 +13,7 @@ console.log(Routes);
 
 const router = new Router({
   mode: 'history',
-  Routes
+  routes
 });
 
 router.beforeEach((to, from, next) => {

@@ -99,12 +99,10 @@
 				</van-swipe-item>
 			</van-swipe>
 		</div>
-		<Footer></Footer>	
 	</div>
 </template>
 <script>
 
-	import Footer from '../components/footer/footer.vue'
 
 	export default {
 		data(){
@@ -113,7 +111,7 @@
 			}
 		},
 		components:{
-			Footer
+
 		},
 		metaInfo: {
 			title:'lokep',

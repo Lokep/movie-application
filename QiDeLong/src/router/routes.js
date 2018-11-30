@@ -4,7 +4,7 @@ import Social from '@/views/Social'
 import Movie from '@/views/Movie'
 import User from '@/views/User'
 
-const Routes = [{
+const routes = [{
     path: '/login',
     name: '登录',
     component: Login
@@ -40,4 +40,4 @@ const Routes = [{
 }]
 
 
-export default Routes
+export default routes
