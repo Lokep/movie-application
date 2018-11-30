@@ -19,24 +19,22 @@
     </van-swipe>
     <van-tabs v-model="active" sticky color="#506cec">
       <van-tab title="推荐">
-        <movie-grid v-for="(item, index) in coming_soon" :key="index" :movieInfo="item"></movie-grid>
+        <movie-grid v-for="(item, index) in in_theaters" :key="index" :movieInfo="item"></movie-grid>
       </van-tab>
       <van-tab title="热门">
-        <movie-grid v-for="(item, index) in in_theaters" :key="index" :movieInfo="item"></movie-grid>
+        <movie-grid v-for="(item, index) in coming_soon" :key="index" :movieInfo="item"></movie-grid>
       </van-tab>
       <van-tab title="榜单">
         <movie-grid v-for="(item, index) in top250" :key="index" :movieInfo="item"></movie-grid>
       </van-tab>
       <van-tab title="专题">
-        <movie-grid v-for="(item, index) in coming_soon" :key="index" :movieInfo="item"></movie-grid>
+        <movie-grid v-for="(item, index) in in_theaters" :key="index" :movieInfo="item"></movie-grid>
       </van-tab>
     </van-tabs>
-    <!-- <Footer></Footer> -->
   </div>
 </template>
 <script>
-import movieGrid from "@/components/movieGrid.vue";
-import Footer from "../components/footer/footer.vue";
+import movieGrid from "@/components/movie/movieGrid.vue";
 export default {
   components: {
     movieGrid
@@ -50,9 +48,6 @@ export default {
       top250: [],
       active: 0
     };
-  },
-  components: {
-    Footer
   },
   mounted() {
     this.get_coming_soon();
@@ -99,9 +94,6 @@ export default {
 
 </script>
 <style scoped>
-.movie i {
-  display: inline-block !important;
-}
 
 .page-title {
   color: #1a1f25;

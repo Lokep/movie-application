@@ -1,8 +1,8 @@
 <template>
   <div id="app">
-
-	<Footer></Footer>
-    <router-view/>
+    <div style="padding-bottom: 50px;">
+      <router-view/>
+    </div>
 		<Footer></Footer>	
   </div>
 </template>
@@ -24,7 +24,7 @@ export default {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
+  min-height: 100vh;
 }
 </style>

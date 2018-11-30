@@ -1,6 +1,6 @@
 <style>
 	.home{
-		 
+		 text-align: center;
 	}
 	.home-head{
 		width:6.7rem;

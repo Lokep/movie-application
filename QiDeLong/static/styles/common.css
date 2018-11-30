@@ -16,7 +16,7 @@ img{
 	-webkit-appearance:none;
 	font-size: inherit;
 }
-img,span,input,textarea,a,i{
+img,input,textarea,a{
 	display: block!important;
 }
 input,textarea{

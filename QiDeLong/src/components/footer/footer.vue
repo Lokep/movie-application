@@ -8,6 +8,7 @@
   z-index: 10;
   background-color: #fff;
   height: 1.05rem;
+  text-align: center;
 }
 .footer-row {
   width: 7.2rem;
@@ -29,40 +30,35 @@
 }
 </style>
 <template>
-	<div class="footer">
-		<van-row class="footer-row">
-		  	<van-col span="6">
-		  		<router-link class="footer-link" to='/' exact>
-		  			<i class="fa fa-home"></i>
-		  		</router-link>
-		  	</van-col>
-		  	<van-col span="6">
-		  		<router-link class="footer-link" to='/movie'>
-		  			<i class="fa fa-camera" style="font-size: .475rem"></i>
-		  		</router-link>
-		  	</van-col>
-		  	<van-col span="6">
-		  		<router-link class="footer-link" to='social'>
-		  			<i class="fa fa-compass"></i>
-		  		</router-link>	
-		  		
-		  	</van-col>
-		  	<van-col span="6">
-		  		<router-link class="footer-link" to='/user'>
-		  			<i class="fa fa-user"></i>
-		  		</router-link>	
-		  		
-		  	</van-col>
-		</van-row>
-	</div>
+  <div class="footer">
+    <van-row class="footer-row">
+      <van-col span="6">
+        <router-link class="footer-link" to="/" exact>
+          <i class="fa fa-home"></i>
+        </router-link>
+      </van-col>
+      <van-col span="6">
+        <router-link class="footer-link" to="/movie">
+          <i class="fa fa-camera" style="font-size: .475rem"></i>
+        </router-link>
+      </van-col>
+      <van-col span="6">
+        <router-link class="footer-link" to="social">
+          <i class="fa fa-compass"></i>
+        </router-link>
+      </van-col>
+      <van-col span="6">
+        <router-link class="footer-link" to="/user">
+          <i class="fa fa-user"></i>
+        </router-link>
+      </van-col>
+    </van-row>
+  </div>
 </template>
 <script>
-	export default{
-		data(){
-			return{
-				
-			}
-		},
-
-	}
+export default {
+  data() {
+    return {};
+  }
+};
 </script>
