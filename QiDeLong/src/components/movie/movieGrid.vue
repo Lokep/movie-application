@@ -7,13 +7,13 @@
         <img class="movie-bg" src="../../../static/images/movie.png" alt="" srcset="">
       </div>
       <div class="movie-rate">
-        <van-rate v-model="rate" :size="10" color="#506cec"/>
-        <span class="movie-score">{{movieInfo.rating.average}}</span>
+        <van-rate readonly v-model="rate" :size="10" color="#506cec"/>
+        <span class="movie-score">{{movieInfo.rating.average}}分</span>
       </div>
       <span class="movie-director">导演：{{movieInfo.directors[0].name}}</span>
       <span class="movie-actor">
         演员：
-        <span v-for="item in movieInfo.casts">{{item.name}}/</span>
+        <span v-for="item in movieInfo.casts">{{item.name}} /</span>
       </span>
     </div>
   </div>

@@ -1,221 +1,254 @@
 <style scoped>
-.container{
-    display:flex;
-    flex-direction: column;
+.container {
+  display: flex;
+  flex-direction: column;
+  font-size: .3rem;
 }
 
-.head-img{
-    width:100%;
-    height: 320rpx;
-    -webkit-filter:blur(20px);
+.head-img {
+  width: 100%;
+  height: 4rem;
+  -webkit-filter: blur(10px);
 }
 
-.head-img-hover{
-    width: 100%;
-    height: 320rpx;
-    position:absolute;
-    top:0;
-    left:0;
-    display:flex;
-    flex-direction: column;
+.head-img-hover {
+  width: 100%;
+  height: 3.2rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
 }
 
-.main-title{
-    font-size: 19px;
-    color:#fff;
-    font-weight:bold;
-    margin-top: 50rpx;
-    margin-left: 40rpx;
-    letter-spacing: 2px;
+.main-title {
+  font-size: .4rem;
+  color: #fff;
+  font-weight: bold;
+  margin-top: .5rem;
+  margin-left: .5rem;
+  letter-spacing: 2px;
 }
 
-.sub-title{
-    font-size: 28rpx;
-    color:#fff;
-    margin-left: 40rpx;
-    margin-top: 30rpx;
+.sub-title {
+  font-size: .4rem;
+  color: #fff;
+  margin-left: .5rem;
+  margin-top: .3rem;
 }
 
-.like{
-    display:flex;
-    flex-direction: row;
-    margin-top: 30rpx;
-    margin-left: 40rpx;
+.like {
+  width: 4.3rem;
+  display: flex;
+  flex-direction: row;
+  margin-left: .5rem;
+  margin-top: .3rem;
+  justify-content: space-around;
 }
 
-.highlight-font{
-    color: #f21146;
-    font-size:22rpx;
-    margin-right: 10rpx;
+.like > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: .3rem 0;
 }
 
-.plain-font{
-    color: #666;
-    font-size:22rpx;
-    margin-right: 30rpx;
+.movie-score {
+  margin-left: 0.2rem;
+  color: #506cec;
 }
 
-
-.movie-img{
-    height:238rpx;
-    width: 175rpx;
-    position: absolute;
-    top:160rpx;
-    right: 30rpx;
+.highlight-font {
+  color: #506cec;
+  font-size: .25rem;
+  margin-bottom: .1rem;
 }
 
-.summary{
-    margin-left:40rpx;
-    margin-top: 40rpx;
-    color: #777777;
+.plain-font {
+  color: #999;
+  font-size: .25rem;
 }
 
-.original-title{
-    color: #1f3463;
-    font-size: 24rpx;
-    font-weight: bold;
-    margin-bottom: 40rpx;
+.movie-img {
+  height: 2.4rem;
+  width: 1.75rem;
+  position: absolute;
+  top: 1.6rem;
+  right: .3rem;
 }
 
-.flex-row{
-    display:flex;
-    flex-direction: row;
-    margin-bottom: 10rpx;
+.summary {
+  color: #777777;
+  margin-top: .4rem;
 }
 
-.mark{
-    margin-right: 30rpx;
-    white-space:nowrap;
-    color: #999999;
+.original-title {
+  margin-top: .4rem;
+  margin-left: .4rem;
+  color: #1f3463;
+  font-size: .36rem;
+  font-weight: bold;
+  margin-bottom: .4rem;
 }
 
-.hr{
-    margin-top:45rpx;
-    height:1px;
-    width: 100%;
-    background-color: #d9d9d9;
+.flex-row {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: .1rem;
+  margin-left: .4rem;
 }
 
-.synopsis{
-    margin-left:40rpx;
-    display:flex;
-    flex-direction: column;
-    margin-top: 50rpx;
+.mark {
+  margin-right: .3rem;
+  white-space: nowrap;
+  color: #999999;
 }
 
-.synopsis-font{
-    color:#999;
+.hr {
+  margin-top: .45rem;
+  height: 1px;
+  width: 100%;
+  background-color: #d9d9d9;
 }
 
-.summary-content{
-    margin-top: 20rpx;
-    margin-right: 40rpx;
-    line-height:40rpx;
-    letter-spacing: 1px;
+.synopsis {
+  margin-left: .4rem;
+  display: flex;
+  flex-direction: column;
+  margin-top: .5rem;
 }
 
-.cast{
-    margin-left:40rpx;
-    display:flex;
-    flex-direction: column;
-    margin-top:50rpx;
+.synopsis-font {
+  color: #999;
 }
 
-.cast-font{
-    color: #999;
-    margin-bottom: 40rpx;
+.summary-content {
+  margin-top: .2rem;
+  margin-right: .4rem;
+  line-height: .4rem;
+  letter-spacing: 1px;
 }
 
-.cast-container{
-    display:inline-flex;
-    flex-direction: column;
-    margin-bottom: 50rpx;
-    margin-right: 40rpx;
-    width: 170rpx;
-    text-align:center;
-    white-space: normal;
+.cast {
+  margin-left: .4rem;
+  display: flex;
+  flex-direction: column;
+  margin-top: .5rem;
 }
 
-.cast-imgs{
-    white-space: nowrap;
+.cast-font {
+  color: #999;
+  margin-bottom: .4rem;
 }
 
-.cast-img{
-    width: 170rpx;
-    height: 210rpx;
+.cast-container {
+  display: inline-flex;
+  flex-direction: column;
+  margin-bottom: .5rem;
+  margin-right: .4rem;
+  width: 1.7rem;
+  text-align: center;
+  white-space: normal;
 }
-.cast-name{
-    margin: 10rpx auto 0;
+
+.cast-imgs {
+  white-space: nowrap;
+}
+
+.cast-img {
+  width: 1.7rem;
+  height: 2.1rem;
+}
+.cast-name {
+  margin: .1rem auto 0;
 }
 </style>
 
 <template>
   <div class="movie-detail">
-    <view class="container">
-  <image class="head-img" src="{{movie.movieImg}}" mode="aspectFill" />
-  <view class="head-img-hover" data-src="{{movie.movieImg}}" catchtap="viewMoviePostImg">
-    <text class="main-title">{{movie.title}}</text>
-    <text class="sub-title">{{movie.country + " · "+movie.year}}</text>
-    <view class="like">
-      <text class="highlight-font">
-        {{movie.wishCount}}
-      </text>
-      <text class="plain-font">
-        人喜欢
-      </text>
-      <text class="highlight-font">
-        {{movie.commentCount}}
-      </text>
-      <text class="plain-font">
-        条评论
-      </text>
-    </view>
-  </view>
-  <image class="movie-img" src="{{movie.movieImg}}" data-src="{{movie.movieImg}}" catchtap="viewMoviePostImg"/>
-  <view class="summary">
-    <view class="original-title">
-      <text>{{movie.originalTitle}}</text>
-    </view>
-    <view class="flex-row">
-      <text class="mark">评分</text>
-      <template is="starsTemplate" data="{{stars:movie.stars, score:movie.score}}" />
-    </view>
-    <view class="flex-row">
-      <text class="mark">导演</text>
-      <text>{{movie.director.name}}</text>
-    </view>
-    <view class="flex-row">
-      <text class="mark">影人</text>
-      <text>{{movie.casts}}</text>
-    </view>
-    <view class="flex-row">
-      <text class="mark">类型</text>
-      <text>{{movie.generes}}</text>
-    </view>
-  </view>
-  <view class="hr"></view>
-  <view class="synopsis">
-    <text class="synopsis-font">剧情简介</text>
-    <text class="summary-content">{{movie.summary}}</text>
-  </view>
-  <view class="hr"></view>
-  <view class="cast">
-    <text class="cast-font"> 影人</text>
-    <scroll-view class="cast-imgs" scroll-x="true" style="width:100%">
+    <div class="container">
+      <img class="head-img" :src="movieDetail.images.small">
+      <div class="head-img-hover">
+        <span class="main-title">{{movieDetail.title}}</span>
+        <span class="sub-title">{{movieDetail.countries[0]}}.{{movieDetail.year}}</span>
+        <div class="like">
+          <div>
+            <span class="highlight-font">{{movieDetail.wish_count}}</span>
+            <span class="plain-font">想看</span>
+          </div>
+          <div>
+            <span class="highlight-font">{{movieDetail.collect_count}}</span>
+            <span class="plain-font">人喜欢</span>
+          </div>
+          <div>
+            <span class="highlight-font">{{movieDetail.comments_count}}</span>
+            <span class="plain-font">条评论</span>
+          </div>
+        </div>
+      </div>
+      <img class="movie-img" :src="movieDetail.images.small" />
+      <div class="summary">
+        <div class="original-title">
+          <span>{{movieDetail.original_title}}</span>
+        </div>
+        <div class="flex-row">
+          <span class="mark">评分</span>
+          <van-rate readonly v-model="rate" :size="10" color="#506cec"/>
+          <span class="movie-score">{{movieDetail.rating.average}}分</span>
+        </div>
+      </div>
+      <div class="flex-row">
+        <span class="mark">导演</span>
+        <span>{{movieDetail.directors[0].name}}</span>
+      </div>
+      <div class="flex-row">
+        <span class="mark">影人</span>
+        <span v-for="item in movieDetail.casts">{{item.name}}/</span>
+      </div>
+      <div class="flex-row">
+        <span class="mark">类型</span>
+        <span v-for="item in movieDetail.genres">{{item}}</span>
+      </div>
+      <div class="hr"></div>
+      <div class="synopsis">
+        <span class="synopsis-font">剧情简介</span>
+        <span class="summary-content">{{movieDetail.summary}}</span>
+      </div>
+      <div class="hr"></div>
+      <div class="cast">
+        <span class="cast-font">影人</span>
+      </div>
+    </div>
+    <!-- <scroll-view class="cast-imgs" scroll-x="true" style="width:100%">
       <block wx:for="{{movie.castsInfo}}" wx:for-item="item">
         <view class="cast-container">
           <image class="cast-img" src="{{item.img}}"></image>
           <text class="cast-name">{{item.name}}</text>
         </view>
       </block>
-    </scroll-view>
-  </view>
-</view>
+    </scroll-view>-->
   </div>
 </template>
 
 <script>
 export default {
-  
-}
+  data() {
+    return {
+      movieDetail: {},
+      rate: null
+    }
+  },
+  mounted() {
+    this.getMovieDetail()
+  },
+  methods: {
+    getMovieDetail() {
+      this.$axios.get('/api/v2/movie/subject/' + this.$route.params.id)
+      .then(res => {
+        this.movieDetail = res.data
+        this.rate = Math.round(this.movieDetail.rating.average / 2)
+      })
+    }
+  }
+};
 </script>

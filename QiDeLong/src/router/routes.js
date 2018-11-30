@@ -24,7 +24,14 @@ const routes = [{
     component: Movie,
     meta: {
         requireAuth: true
-    }
+    },
+    children: [
+      {
+        path: 'movieDetail',
+        name: '电影详情',
+        component: () => import("@/views/movie/movieDetail.vue")
+      }
+    ]
 }, {
     path: '/social',
     name: '社区',

@@ -1,36 +1,39 @@
 <template>
   <div class="movie">
-    <van-nav-bar>
-      <template slot="left">
-        <span class="page-title">影片大全</span>
-      </template>
-      <template slot="right">
-        <van-icon class="search-icon" size=".36rem" color="#1a1f25" name="search"/>
-        <van-icon size=".36rem" color="#1a1f25" name="wap-nav"/>
-      </template>
-    </van-nav-bar>
-    <van-swipe class="swiper" @change="onChange">
-      <van-swipe-item class="swiper-item" v-for="(image, index) in images" :key="index">
-        <img :src="image">
-      </van-swipe-item>
-      <ul class="swiper-indicator" slot="indicator">
-        <li v-for="(image, index) in images" :key="index" :class="index == current ? 'active' : ''"></li>
-      </ul>
-    </van-swipe>
-    <van-tabs v-model="active" sticky color="#506cec">
-      <van-tab title="推荐">
-        <movie-grid v-for="(item, index) in in_theaters" :key="index" :movieInfo="item"></movie-grid>
-      </van-tab>
-      <van-tab title="热门">
-        <movie-grid v-for="(item, index) in coming_soon" :key="index" :movieInfo="item"></movie-grid>
-      </van-tab>
-      <van-tab title="榜单">
-        <movie-grid v-for="(item, index) in top250" :key="index" :movieInfo="item"></movie-grid>
-      </van-tab>
-      <van-tab title="专题">
-        <movie-grid v-for="(item, index) in in_theaters" :key="index" :movieInfo="item"></movie-grid>
-      </van-tab>
-    </van-tabs>
+    <div v-if="$route.name=='电影'">
+      <van-nav-bar>
+        <template slot="left">
+          <span class="page-title">影片大全</span>
+        </template>
+        <template slot="right">
+          <van-icon class="search-icon" size=".36rem" color="#1a1f25" name="search"/>
+          <van-icon size=".36rem" color="#1a1f25" name="wap-nav"/>
+        </template>
+      </van-nav-bar>
+      <van-swipe class="swiper" @change="onChange">
+        <van-swipe-item class="swiper-item" v-for="(image, index) in images" :key="index"  @click.native="toMovieDetail(item)">
+          <img :src="image">
+        </van-swipe-item>
+        <ul class="swiper-indicator" slot="indicator">
+          <li v-for="(image, index) in images" :key="index" :class="index == current ? 'active' : ''"></li>
+        </ul>
+      </van-swipe>
+      <van-tabs v-model="active" sticky color="#506cec">
+        <van-tab title="推荐">
+          <movie-grid v-for="(item, index) in in_theaters" :key="index" :movieInfo="item" @click.native="toMovieDetail(item)"></movie-grid>
+        </van-tab>
+        <van-tab title="热门">
+          <movie-grid v-for="(item, index) in coming_soon" :key="index" :movieInfo="item"  @click.native="toMovieDetail(item)"></movie-grid>
+        </van-tab>
+        <van-tab title="榜单">
+          <movie-grid v-for="(item, index) in top250" :key="index" :movieInfo="item"  @click.native="toMovieDetail(item)"></movie-grid>
+        </van-tab>
+        <van-tab title="专题">
+          <movie-grid v-for="(item, index) in in_theaters" :key="index" :movieInfo="item"  @click.native="toMovieDetail(item)"></movie-grid>
+        </van-tab>
+      </van-tabs>
+    </div>
+    <router-view></router-view>
   </div>
 </template>
 <script>
@@ -82,6 +85,12 @@ export default {
           that.images.push(arr[i].images.small);
         }
       });
+    },
+    toMovieDetail(item) {
+      this.$router.push({
+        name: '电影详情',
+        params: item
+      })
     }
   },
   watch: {
