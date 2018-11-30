@@ -3,24 +3,25 @@
 
 	<Footer></Footer>
     <router-view/>
+		<Footer></Footer>	
   </div>
 </template>
 
 <script>
 
-import Footer from './components/footer/footer.vue'
+import Footer from "@/components/footer/footer.vue"
 
 export default {
-  name: 'App',
-  components:{
-  	Footer
+  name: "App",
+  components: {
+    Footer
   }
-}
+};
 </script>
 
 <style>
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
