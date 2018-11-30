@@ -1,5 +1,7 @@
-function getIPAdress() {
-    var interfaces = require('os').networkInterfaces();
+const OS = require('os')
+
+const HOST = (function () {
+    var interfaces = OS.networkInterfaces();
     for (var devName in interfaces) {
         var iface = interfaces[devName];
         for (var i = 0; i < iface.length; i++) {
@@ -9,5 +11,7 @@ function getIPAdress() {
             }
         }
     }
-}
-module.exports = getIPAdress;
+})()
+
+module.exports = HOST;
+
