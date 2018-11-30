@@ -3,6 +3,7 @@ import Home from '@/views/Home'
 import Social from '@/views/Social'
 import Movie from '@/views/Movie'
 import User from '@/views/User'
+import Search from '@/views/Search'
 
 const routes = [{
     path: '/login',
@@ -12,6 +13,7 @@ const routes = [{
     path: '/',
     name: '首页',
     component: Home,
+    alias:'/index',
     meta: {
         requireAuth: true
     },
@@ -37,6 +39,10 @@ const routes = [{
     meta: {
         requireAuth: true
     }
+},{
+	path:'/Search',
+	name:'搜索',
+	component:Search,
 }]
 
 

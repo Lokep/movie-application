@@ -52,6 +52,7 @@ export default {
     };
   },
   components: {
+    movieGrid,
     Footer
   },
   mounted() {

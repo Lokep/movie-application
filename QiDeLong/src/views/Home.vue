@@ -19,20 +19,7 @@
 		font-size: .28rem;
 		color: #ababab;
 	}
-	.home-search{
-		width: 6.4rem;
-		margin: 0 auto;
-		font-size: .25rem;
-		border-bottom: 1px solid #b6b6b6;
-	}
-	.home-search>input{
-		height: .4rem;
-		width: 5rem;
-		padding: .2rem 0;
-	}
-	.home-search-icon{
-		margin:.3rem .2rem 0 0;
-	}
+	
 	.home-swiper{
 		height: 10.35rem;
 	}
@@ -70,15 +57,17 @@
 			<span class="home-sub-title fr">深夜记得早点睡</span>
 
 		</div>
-		<div class="home-search ov">
+		<!-- <div class="home-search ov">
 			<input class="fl" placeholder="请输入影片" @focus="homeRedirect">
 			<van-icon name="search" class="fr home-search-icon"/>
-		</div>	
+		</div>	 -->
+		
+		<SearchPart></SearchPart>
 		<div class="home-swiper">
 			<van-swipe class="swiper">
 				<van-swipe-item class="swiper-item">
 					<div>
-						<img class="hahah" @click='handleImg' src="../assets/images/home-banner.jpg" alt="movie">
+						<img src="../assets/images/home-banner.jpg" alt="movie">
 						<p>当你凝望深渊的时候，深渊也在凝望你</p>
 						<span>-----尼采</span>
 					</div>
@@ -103,7 +92,7 @@
 </template>
 
 <script>
-
+	import SearchPart from '../components/searchPart/searchPart.vue'
 	export default {
 		data(){
 			return{
@@ -111,7 +100,7 @@
 			}
 		},
 		components:{
-
+			SearchPart
 		},
 		metaInfo: {
 			title:'lokep',
@@ -123,17 +112,7 @@
 			]
 		},
 		methods:{
-			homeRedirect(){
-				let path = this.$route.path
-				console.log(path);
-				if(path=='/'){
-					this.$router.push('/Search')
-				}
-
-			},
-			handleImg(e){
-				console.log(e.target);
-			}
+	
 		}
 	}
 </script>
