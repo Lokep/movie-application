@@ -3,6 +3,7 @@
 // see http://vuejs-templates.github.io/webpack for documentation.
 
 const path = require('path');
+const getIp = require('../src/utils/getIp')
 
 module.exports = {
   dev: {
@@ -23,7 +24,8 @@ module.exports = {
 
     // Various Dev Server settings
     //host: 'localhost', // can be overwritten by process.env.HOST
-    host: '192.168.1.90',
+
+    host: getIp(),
     port: 8080, // can be overwritten by process.env.PORT, if port is in use, a free one will be determined
     autoOpenBrowser: false,
     errorOverlay: true,
