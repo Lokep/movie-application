@@ -31,12 +31,18 @@
         <movie-grid v-for="(item, index) in coming_soon" :key="index" :movieInfo="item"></movie-grid>
       </van-tab>
     </van-tabs>
+    
+    <!-- <Footer></Footer> -->
+
   </div>
 
 </template>
 
 <script>
 import movieGrid from '@/components/movieGrid.vue'
+
+import Footer from '../components/footer/footer.vue'
+
 export default {
   components: {
     movieGrid
@@ -50,6 +56,9 @@ export default {
       top250: [],
       active: 0
     };
+  },
+  components:{
+    Footer
   },
   mounted() {
     this.get_coming_soon()

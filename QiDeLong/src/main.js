@@ -7,9 +7,11 @@ import axios from 'axios'
 import Vant from 'vant'
 import 'vant/lib/index.css'
 import Meta from 'vue-meta'
+// import Footer from './components/footer/footer.vue'
 
 Vue.use(Vant)
 Vue.use(Meta)
+// Vue.use(Footer)
 
 Vue.config.productionTip = false
 Vue.prototype.$axios = axios
