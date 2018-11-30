@@ -40,7 +40,7 @@
 		width: 100%;
 	}
 	.swiper-item>div{
-		width: 6.125rem;
+		width: 5.125rem;
 		margin: .5rem auto .5rem;
 	    -o-box-shadow: 0.5px 0.866px 35px 0 rgba(0, 0, 0, 0.21);
 	    -webkit-box-shadow: 0.5px 0.866px 35px 0 rgba(0, 0, 0, 0.21);
@@ -78,7 +78,7 @@
 			<van-swipe class="swiper">
 				<van-swipe-item class="swiper-item">
 					<div>
-						<img src="../assets/images/home-banner.jpg" alt="movie">
+						<img class="hahah" @click='handleImg' src="../assets/images/home-banner.jpg" alt="movie">
 						<p>当你凝望深渊的时候，深渊也在凝望你</p>
 						<span>-----尼采</span>
 					</div>
@@ -126,11 +126,15 @@
 		},
 		methods:{
 			homeRedirect(){
-				let path = this.$router.path
+				let path = this.$route.path
+				console.log(path);
 				if(path=='/'){
 					this.$router.push('/Search')
 				}
 
+			},
+			handleImg(e){
+				console.log(e.target);
 			}
 		}
 	}

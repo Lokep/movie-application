@@ -32,13 +32,13 @@
 	<div class="footer">
 		<van-row class="footer-row">
 		  	<van-col span="6">
-		  		<router-link class="footer-link" to='/'>
+		  		<router-link class="footer-link" to='/' exact>
 		  			<i class="fa fa-home"></i>
 		  		</router-link>
 		  	</van-col>
 		  	<van-col span="6">
 		  		<router-link class="footer-link" to='/movie'>
-		  			<i class="fa fa-camera" style="font-size: .5rem"></i>
+		  			<i class="fa fa-camera" style="font-size: .475rem"></i>
 		  		</router-link>
 		  	</van-col>
 		  	<van-col span="6">
@@ -60,7 +60,7 @@
 	export default{
 		data(){
 			return{
-
+				
 			}
 		},
 

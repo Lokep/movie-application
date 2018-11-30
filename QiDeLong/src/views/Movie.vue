@@ -23,11 +23,17 @@
       <van-tab title="榜单">榜单</van-tab>
       <van-tab title="专题">专题</van-tab>
     </van-tabs>
+    
+    <Footer></Footer>
+
   </div>
 
 </template>
 
 <script>
+
+import Footer from '../components/footer/footer.vue'
+
 export default {
   data() {
     return {
@@ -36,6 +42,9 @@ export default {
       movieList: [],
       active: 0
     };
+  },
+  components:{
+    Footer
   },
   mounted() {
     this.showMovieList();
