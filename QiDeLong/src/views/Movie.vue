@@ -100,43 +100,35 @@ export default {
         }
     }
 };
-
 </script>
 <style scoped>
 .page-title {
     color: #1a1f25;
     font-size: 0.36rem !important;
 }
-
 .search-icon {
     margin-right: 0.2rem;
 }
-
 .banner {
     width: 100%;
 }
-
 .swiper {
     height: 3rem;
     position: relative;
 }
-
 .swiper-item {
     width: 100%;
     padding: 0.2rem;
     box-sizing: border-box;
 }
-
 .swiper-item img {
     width: 100%;
 }
-
 .swiper-indicator {
     position: absolute;
     right: 0.5rem;
     bottom: 0.2rem;
 }
-
 .swiper-indicator li {
     width: 0.15rem;
     height: 0.15rem;
@@ -145,9 +137,7 @@ export default {
     float: left;
     margin-left: 0.2rem;
 }
-
 .swiper-indicator li.active {
     background: red;
 }
-
 </style>
