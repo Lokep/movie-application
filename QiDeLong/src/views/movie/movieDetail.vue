@@ -194,6 +194,7 @@ export default {
       imgSrc: {}
     }
   },
+
   mounted() {
     this.movieDetail = this.$route.query
     this.rate = Math.round(this.movieDetail.rating.average / 2)
