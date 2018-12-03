@@ -15,8 +15,8 @@
 	}
 </style>
 <template>
-	<div class="home-search ov">
-		<input class="fl" placeholder="请输入影片" @focus="homeRedirect">
+	<div class="home-search ov" @click="homeRedirect">
+		<input :readoly='pathBool' class="fl" placeholder="请输入影片">
 		<van-icon name="search" class="fr home-search-icon"/>
 	</div>	
 </template>
@@ -24,17 +24,22 @@
 	export default {
 		data(){
 			return{
-				
+				pathBool:true
 			}
 		},
 		methods:{
 			homeRedirect(){
-				let path = this.$route.path
-				if(path=='/'){
+				
+				if(this.$route.path=='/'){
 					this.$router.push('/Search')
 				}
 
 			},
+		},
+		mounted(){
+			if(this.$route.path=='/'||this.$route.path=='/index'){
+				this.pathBool=false
+			}	
 		}
 	}
 </script>
