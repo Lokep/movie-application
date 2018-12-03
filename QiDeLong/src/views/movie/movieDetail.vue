@@ -4,13 +4,11 @@
     flex-direction: column;
     font-size: .3rem;
 }
-
 .head-img {
     width: 100%;
     height: 4rem;
     -webkit-filter: blur(10px);
 }
-
 .head-img-hover {
     width: 100%;
     height: 3.2rem;
@@ -20,7 +18,6 @@
     display: flex;
     flex-direction: column;
 }
-
 .main-title {
     font-size: .4rem;
     color: #fff;
@@ -29,14 +26,12 @@
     margin-left: .5rem;
     letter-spacing: 2px;
 }
-
 .sub-title {
     font-size: .4rem;
     color: #fff;
     margin-left: .5rem;
     margin-top: .3rem;
 }
-
 .like {
     width: 4.3rem;
     display: flex;
@@ -45,30 +40,25 @@
     margin-top: .3rem;
     justify-content: space-around;
 }
-
 .like>div {
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: .3rem 0;
 }
-
 .movie-score {
     margin-left: 0.2rem;
     color: #506cec;
 }
-
 .highlight-font {
     color: #506cec;
     font-size: .25rem;
     margin-bottom: .1rem;
 }
-
 .plain-font {
     color: #999;
     font-size: .25rem;
 }
-
 .movie-img {
     height: 2.4rem;
     width: 1.75rem;
@@ -76,12 +66,10 @@
     top: 1.6rem;
     right: .3rem;
 }
-
 .summary {
     color: #777777;
     margin-top: .4rem;
 }
-
 .original-title {
     margin-top: .4rem;
     margin-left: .4rem;
@@ -90,57 +78,48 @@
     font-weight: bold;
     margin-bottom: .4rem;
 }
-
 .flex-row {
     display: flex;
     flex-direction: row;
     margin-bottom: .1rem;
     margin-left: .4rem;
 }
-
 .mark {
     margin-right: .3rem;
     white-space: nowrap;
     color: #999999;
 }
-
 .hr {
     margin-top: .45rem;
     height: 1px;
     width: 100%;
     background-color: #d9d9d9;
 }
-
 .synopsis {
     margin-left: .4rem;
     display: flex;
     flex-direction: column;
     margin-top: .5rem;
 }
-
 .synopsis-font {
     color: #999;
 }
-
 .summary-content {
     margin-top: .2rem;
     margin-right: .4rem;
     line-height: .4rem;
     letter-spacing: 1px;
 }
-
 .cast {
     margin-left: .4rem;
     display: flex;
     flex-direction: column;
     margin-top: .5rem;
 }
-
 .cast-font {
     color: #999;
     margin-bottom: .4rem;
 }
-
 .cast-container {
     display: inline-flex;
     flex-direction: column;
@@ -150,20 +129,16 @@
     text-align: center;
     white-space: normal;
 }
-
 .cast-imgs {
     white-space: nowrap;
 }
-
 .cast-img {
     width: 1.7rem;
     height: 2.1rem;
 }
-
 .cast-name {
     margin: .1rem auto 0;
 }
-
 </style>
 <template>
   <div class="movie-detail">
@@ -253,5 +228,4 @@ export default {
     }
   }
 };
-
 </script>

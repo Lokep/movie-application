@@ -40,7 +40,7 @@
 	}
 	.swiper-item p{
 		font-size: .28rem;
-		margin: .4rem 0 0 .2rem;
+		margin: .2rem 0 0 .2rem;
 		text-align: left;
 	}
 	.swiper-item span{
@@ -65,27 +65,15 @@
 		<SearchPart></SearchPart>
 		<div class="home-swiper">
 			<van-swipe class="swiper">
-				<van-swipe-item class="swiper-item">
+
+				<van-swipe-item class="swiper-item" v-for="(list,index) in lists" :key="index">
 					<div>
-						<img src="../assets/images/home-banner.jpg" alt="movie">
-						<p>当你凝望深渊的时候，深渊也在凝望你</p>
-						<span>-----尼采</span>
+						<img v-lazy="list.images.small" alt="movie">
+						<p> {{list.title}} {{list.original_title}} </p>
+						<span>----- {{list.directors[0].name}}</span>
 					</div>
 				</van-swipe-item>
-				<van-swipe-item class="swiper-item">
-					<div>
-						<img src="../assets/images/home-banner.jpg" alt="movie">
-						<p>当你凝望深渊的时候，深渊也在凝望你</p>
-						<span>-----尼采</span>
-					</div>
-				</van-swipe-item>
-				<van-swipe-item class="swiper-item">
-					<div>
-						<img src="../assets/images/home-banner.jpg" alt="movie">
-						<p>当你凝望深渊的时候，深渊也在凝望你</p>
-						<span>-----尼采</span>
-					</div>
-				</van-swipe-item>
+				
 			</van-swipe>
 		</div>
 	</div>
@@ -96,7 +84,7 @@
 	export default {
 		data(){
 			return{
-
+				lists:[],
 			}
 		},
 		components:{
@@ -113,6 +101,14 @@
 		},
 		methods:{
 	
+		},
+		beforeMount(){
+			this.$axios.get('/api/v2/movie/top250').then(res=>{
+				this.lists = res.data.subjects; 
+			})
+		},
+		computed:{
+			
 		}
 	}
 </script>

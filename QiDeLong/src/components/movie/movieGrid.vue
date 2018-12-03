@@ -52,47 +52,39 @@ export default {
   height: 2.7rem;
   margin-top: -0.7rem;
 }
-
 .movie-info {
   margin-left: 0.2rem;
   display: flex;
   flex-direction: column;
 }
-
 .movie-info-header {
   margin-bottom: .2rem;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
-
 .movie-bg {
   width: .4rem;
   height: .3rem;
   margin-top: .1rem;
 }
-
 .movie-name {
   font-size: 0.3rem;
   font-weight: 700;
 }
-
 .movie-rate {
   display: flex;
   flex-direction: row;
   margin-bottom: .2rem;
 }
-
 .movie-score {
   margin-left: 0.2rem;
   color: #506cec;
 }
-
 .movie-director {
   font-size: .25rem;
   margin-bottom: .1rem;
 }
-
 .movie-actor {
   width: 3.8rem;
   overflow: hidden;
@@ -101,4 +93,3 @@ export default {
   font-size: .25rem;
 }
 </style>
-
