@@ -87,7 +87,7 @@
 		<h5 class="search-history-title">最近热门</h5>
 
 		<ul class="search-hotpoint">
-			<li v-for='(hotpoint,index) in hotpoints' :key='index' :style="{backgroundColor:RandomColor}">
+			<li v-for='(hotpoint,index) in hotpoints' :key='index'>
 				{{hotpoint}}
 			</li> 
 		</ul>
@@ -112,15 +112,14 @@
 			}
 		},
 		computed: {
-			RandomColor(index) {
-				let r, g, b;
-				r = Math.floor(Math.random() * 256);
-				g = Math.floor(Math.random() * 256);
-				b = Math.floor(Math.random() * 256);
-				console.log(index);
-				return "rgb(" +r + ',' +g+ ',' +b+ ")";
+			// RandomColor(index) {
+			// 	let r, g, b;
+			// 	r = Math.floor(Math.random() * 256);
+			// 	g = Math.floor(Math.random() * 256);
+			// 	b = Math.floor(Math.random() * 256);
+			// 	return "rgb(" +r + ',' +g+ ',' +b+ ")";
 
-			}
+			// }
 		}
 
 	}
