@@ -198,6 +198,7 @@
           <van-rate readonly v-model="rate" :size="10" color="#506cec"/>
           <span class="movie-score">{{movieDetail.rating.average}}分</span>
         </div>
+      </div>
         <!-- <scroll-view class="cast-imgs" scroll-x="true" style="width:100%">
       <block wx:for="{{movie.castsInfo}}" wx:for-item="item">
         <view class="cast-container">
@@ -207,31 +208,18 @@
       </block>
     </scroll-view>-->
     </div>
+  </div>
 </template>
 <script>
 export default {
-    data() {
-        return {
-            movieDetail: {},
-            rate: null,
-            imgSrc: {}
-        }
-    },
-    // mounted() {
-    //     this.getMovieDetail()
-    // },
-    // methods: {
-    //     getMovieDetail() {
-    //         this.$axios.get('/api/v2/movie/subject/' + this.$route.params.id)
-    //             .then(res => {
-    //                 this.movieDetail = res.data
-    //                 this.imgSrc = res.data.images
-    //                 console.log(this.imgSrc);
-    //                 this.rate = Math.round(this.movieDetail.rating.average / 2)
-    //             })
-    //     }
-    // }
-  // },
+  data() {
+    return {
+      movieDetail: {},
+      rate: null,
+      imgSrc: {}
+    }
+  },
+
   mounted() {
     this.movieDetail = this.$route.query
     this.rate = Math.round(this.movieDetail.rating.average / 2)

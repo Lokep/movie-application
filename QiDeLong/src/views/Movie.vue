@@ -68,66 +68,65 @@
 <script>
 import movieGrid from "@/components/movie/movieGrid.vue";
 export default {
-    components: {
-        movieGrid
+  components: {
+    movieGrid
+  },
+  data() {
+    return {
+      current: 0,
+      images: [],
+      in_theaters: [],
+      coming_soon: [],
+      top250: [],
+      active: 0
+    };
+  },
+  mounted() {
+    this.get_coming_soon();
+    this.get_in_theaters();
+    this.get_mtop250();
+    this.showMovieList();
+  },
+  methods: {
+    onChange(index) {
+      this.current = index;
     },
-    data() {
-        return {
-            current: 0,
-            images: [],
-            in_theaters: [],
-            coming_soon: [],
-            top250: [],
-            active: 0
-        };
+    get_coming_soon() {
+      this.$axios.get("/api/v2/movie/coming_soon").then(res => {
+        this.coming_soon = res.data.subjects;
+      });
     },
-    mounted() {
-        this.get_coming_soon();
-        this.get_in_theaters();
-        this.get_mtop250();
-        this.showMovieList();
+    get_in_theaters() {
+      this.$axios.get("/api/v2/movie/in_theaters").then(res => {
+        this.in_theaters = res.data.subjects;
+      });
     },
-    methods: {
-        onChange(index) {
-            this.current = index;
-        },
-        get_coming_soon() {
-            this.$axios.get("/api/v2/movie/coming_soon").then(res => {
-                this.coming_soon = res.data.subjects;
-            });
-        },
-        get_in_theaters() {
-            this.$axios.get("/api/v2/movie/in_theaters").then(res => {
-                this.in_theaters = res.data.subjects;
-            });
-        },
-        get_mtop250() {
-            this.$axios.get("/api/v2/movie/top250").then(res => {
-                this.top250 = res.data.subjects;
-            });
-        },
-        showMovieList() {
-            this.$axios.get("/api/v2/movie/coming_soon").then(res => {
-                let arr = res.data.subjects,
-                    that = this;
-                for (let i = 0; i < 3; i++) {
-                    that.images.push(arr[i].images.small);
-                }
-            });
-        },
+    get_mtop250() {
+      this.$axios.get("/api/v2/movie/top250").then(res => {
+        this.top250 = res.data.subjects;
+      });
+    },
+    showMovieList() {
+      this.$axios.get("/api/v2/movie/coming_soon").then(res => {
+        let arr = res.data.subjects,
+          that = this;
+        for (let i = 0; i < 3; i++) {
+          that.images.push(arr[i].images.small);
+        }
+      });
+    },
     toMovieDetail(item) {
-      this.getMovieDetail(item.id, (res) => {
+      this.getMovieDetail(item.id, res => {
         this.$router.push({
-          name: '电影详情',
+          name: "电影详情",
           query: res.data
-        })
-      })
+        });
+      });
     },
-    getMovieDetail(id,callback) {
-      this.$axios.get('/api/v2/movie/subject/' + id)
-      .then(res => {
-        callback(res)
-      })
+    getMovieDetail(id, callback) {
+      this.$axios.get("/api/v2/movie/subject/" + id).then(res => {
+        callback(res);
+      });
     }
   },
   watch: {
