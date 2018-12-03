@@ -87,11 +87,23 @@ export default {
       });
     },
     toMovieDetail(item) {
-      this.$router.push({
-        name: '电影详情',
-        params: item
+      this.getMovieDetail(item.id, (res) => {
+        this.$router.push({
+          name: '电影详情',
+          query: res.data
+        })
+      })
+    },
+    getMovieDetail(id,callback) {
+      this.$axios.get('/api/v2/movie/subject/' + id)
+      .then(res => {
+        callback(res)
       })
     }
+    
+  },
+  computed: {
+
   },
   watch: {
     active(to, from) {

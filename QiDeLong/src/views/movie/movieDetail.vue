@@ -167,7 +167,8 @@
 <template>
   <div class="movie-detail">
     <div class="container">
-      <img class="head-img" :src="movieDetail.images.small">
+      <img class="head-img" :src="movieDetail.images.large" />
+      {{movieDetail.images.large}}
       <div class="head-img-hover">
         <span class="main-title">{{movieDetail.title}}</span>
         <span class="sub-title">{{movieDetail.countries[0]}}.{{movieDetail.year}}</span>
@@ -239,16 +240,8 @@ export default {
     }
   },
   mounted() {
-    this.getMovieDetail()
-  },
-  methods: {
-    getMovieDetail() {
-      this.$axios.get('/api/v2/movie/subject/' + this.$route.params.id)
-      .then(res => {
-        this.movieDetail = res.data
-        this.rate = Math.round(this.movieDetail.rating.average / 2)
-      })
-    }
+    this.movieDetail = this.$route.query
+    this.rate = Math.round(this.movieDetail.rating.average / 2)
   }
 };
 </script>
