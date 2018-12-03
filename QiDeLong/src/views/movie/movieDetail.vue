@@ -169,7 +169,6 @@
   <div class="movie-detail">
     <div class="container">
       <img class="head-img" :src="movieDetail.images.large" />
-      {{movieDetail.images.large}}
       <div class="head-img-hover">
         <span class="main-title">{{movieDetail.title}}</span>
         <span class="sub-title">{{movieDetail.countries[0]}}.{{movieDetail.year}}</span>
@@ -198,6 +197,27 @@
           <van-rate readonly v-model="rate" :size="10" color="#506cec"/>
           <span class="movie-score">{{movieDetail.rating.average}}分</span>
         </div>
+        <div class="flex-row">
+          <span class="mark">导演</span>
+          <span>{{movieDetail.directors[0].name}}</span>
+        </div>
+        <div class="flex-row">
+          <span class="mark">影人</span>
+          <span v-for="item in movieDetail.casts">{{item.name}}/</span>
+        </div>
+        <div class="flex-row">
+          <span class="mark">类型</span>
+          <span v-for="item in movieDetail.genres">{{item}}&nbsp;</span>
+        </div>
+      </div>
+      <div class="hr"></div>
+      <div class="synopsis">
+        <span class="synopsis-font">剧情简介</span>
+        <span class="summary-content">{{movieDetail.summary}}</span>
+      </div>
+      <div class="hr"></div>
+      <div class="cast">
+        <span class="cast-font"> 影人</span>
       </div>
         <!-- <scroll-view class="cast-imgs" scroll-x="true" style="width:100%">
       <block wx:for="{{movie.castsInfo}}" wx:for-item="item">
@@ -219,10 +239,18 @@ export default {
       imgSrc: {}
     }
   },
-
   mounted() {
-    this.movieDetail = this.$route.query
-    this.rate = Math.round(this.movieDetail.rating.average / 2)
+    this.getMovieDetail(this.$route.query.id)
+  },
+  methods:{
+    getMovieDetail(id) {
+      this.$axios.get("/api/v2/movie/subject/" + id)
+      .then(res => {
+         this.movieDetail = res.data
+         console.log(this.movieDetail)
+        this.rate = Math.round(this.movieDetail.rating.average / 2)
+      });
+    }
   }
 };
 
