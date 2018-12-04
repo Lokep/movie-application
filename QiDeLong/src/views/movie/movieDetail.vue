@@ -193,6 +193,11 @@
       <div class="hr"></div>
       <div class="cast">
         <span class="cast-font"> 影人</span>
+        <!-- <van-tabs>
+          <van-tab v-for="(item, index) in movieDetail.casts" :key="index" :line-width="0">
+            <img :src="item.avatars.small" alt="" srcset="">
+          </van-tab>
+        </van-tabs> -->
       </div>
         <!-- <scroll-view class="cast-imgs" scroll-x="true" style="width:100%">
       <block wx:for="{{movie.castsInfo}}" wx:for-item="item">

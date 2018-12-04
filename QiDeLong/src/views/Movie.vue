@@ -11,13 +11,8 @@
         </template>
       </van-nav-bar>
       <van-swipe class="swiper" @change="onChange">
-        <van-swipe-item
-          class="swiper-item"
-          v-for="(image, index) in images"
-          :key="index"
-          @click.native="toMovieDetail(item)"
-        >
-          <img :src="image">
+        <van-swipe-item class="swiper-item" v-for="(item, index) in images" :key="index" @click.native="toMovieDetail(item)">
+          <img :src="item.images.small">
         </van-swipe-item>
         <ul class="swiper-indicator" slot="indicator">
           <li
@@ -107,12 +102,9 @@ export default {
       });
     },
     showMovieList() {
-      this.$axios.get("/api/v2/movie/coming_soon").then(res => {
-        let arr = res.data.subjects,
-          that = this;
-        for (let i = 0; i < 3; i++) {
-          that.images.push(arr[i].images.small);
-        }
+      this.$axios.get("/api/v2/movie/top250?start=21&count=4").then(res => {
+        this.images = res.data.subjects
+        console.log(this.images)
       });
     },
     toMovieDetail(item) {
