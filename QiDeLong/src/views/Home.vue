@@ -103,7 +103,7 @@
 	
 		},
 		beforeMount(){
-			this.$axios.get('/api/v2/movie/top250').then(res=>{
+			this.$axios.get('/api/v2/movie/top250?start=0&count=3').then(res=>{
 				this.lists = res.data.subjects; 
 			})
 		},

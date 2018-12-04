@@ -44,3 +44,7 @@ i{
 .fr{
 	float: right;
 }
+/*常用width*/
+.common-width{
+	width: 6.7rem;
+}
