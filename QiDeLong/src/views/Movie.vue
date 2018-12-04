@@ -13,11 +13,10 @@
       <van-swipe class="swiper" @change="onChange">
         <van-swipe-item
           class="swiper-item"
-          v-for="(image, index) in images"
+          v-for="(banner, index) in banners"
           :key="index"
-          @click.native="toMovieDetail(item)"
         >
-          <img :src="image">
+          <img :src="banner">
         </van-swipe-item>
         <ul class="swiper-indicator" slot="indicator">
           <li
@@ -74,6 +73,12 @@ export default {
   data() {
     return {
       current: 0,
+      banners:[
+        '../../static/images/banner-1.jpg',
+        '../../static/images/banner-2.jpg',
+        '../../static/images/banner-3.jpg',
+        '../../static/images/banner-4.jpg',
+      ],
       images: [],
       in_theaters: [],
       coming_soon: [],
@@ -142,7 +147,6 @@ export default {
   width: 100%;
 }
 .swiper {
-  height: 3rem;
   position: relative;
 }
 .swiper-item {
@@ -156,7 +160,7 @@ export default {
 .swiper-indicator {
   position: absolute;
   right: 0.5rem;
-  bottom: 0.2rem;
+  bottom: 0.4rem;
 }
 .swiper-indicator li {
   width: 0.15rem;
@@ -167,6 +171,6 @@ export default {
   margin-left: 0.2rem;
 }
 .swiper-indicator li.active {
-  background: red;
+  background: #506cec;
 }
 </style>
