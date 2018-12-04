@@ -1,6 +1,6 @@
 <template>
-  <div class="movie">
-    <div v-if="$route.name=='电影'">
+  <div class="movieIndex">
+    <div>
       <van-nav-bar>
         <template slot="left">
           <span class="page-title">影片大全</span>

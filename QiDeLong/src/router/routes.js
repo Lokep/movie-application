@@ -1,11 +1,12 @@
 import Login from '@/views/Login'
 import Home from '@/views/Home'
 import Social from '@/views/Social'
-import Movie from '@/views/Movie'
-import User from '@/views/User'
+// import Movie from '@/views/Movie'
+import Common from '@/views/CommonTemplate'
 import Search from '@/views/Search'
 
 // 子组件
+import MovieIndex from '@/views/movie/movieIndex.vue'
 import UserIndex from '@/views/user/userIndex.vue'
 import MovieDetail from '@/views/movie/movieDetail.vue'
 import UserResponse from '@/views/user/userResponse.vue'
@@ -25,13 +26,16 @@ const routes = [{
     children: []
 }, {
     path: '/movie',
-    name: '电影',
-    component: Movie,
+    // name: '电影',
+    component: Common,
     meta: {
         requireAuth: true
     },
-    children: [
-      {
+    children: [{
+    	path:'',
+    	name: '电影',
+    	component:MovieIndex
+    },{
         path: 'movieDetail',
         name: '电影详情',
         component: MovieDetail
@@ -47,7 +51,7 @@ const routes = [{
 }, {
     path: '/user',
     // name: '用户',
-    component: User,
+    component: Common,
     meta: {
         requireAuth: true
     },
