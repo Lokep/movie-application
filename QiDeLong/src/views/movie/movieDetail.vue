@@ -21,6 +21,7 @@
     left: 0;
     display: flex;
     flex-direction: column;
+    padding-top: 1rem;
 }
 .main-title {
     font-size: .4rem;
