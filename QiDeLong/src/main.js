@@ -10,8 +10,6 @@ import Meta from 'vue-meta'
 import { Lazyload } from 'vant'
 
 
-// import Footer from './components/footer/footer.vue'
-
 Vue.use(Vant)
 Vue.use(Meta)
 
@@ -19,9 +17,7 @@ Vue.use(Meta)
 Vue.use(Lazyload, {
 	loading:'../static/images/default.png',
 	error:'../static/images/default.png',
-	preload:'7.6rem'
 });
-// Vue.use(Footer)
 
 Vue.config.productionTip = false
 Vue.prototype.$axios = axios

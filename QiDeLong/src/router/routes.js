@@ -5,6 +5,11 @@ import Movie from '@/views/Movie'
 import User from '@/views/User'
 import Search from '@/views/Search'
 
+// 子组件
+import UserIndex from '@/views/user/userIndex.vue'
+import MovieDetail from '@/views/movie/movieDetail.vue'
+import UserResponse from '@/views/user/userResponse.vue'
+
 const routes = [{
     path: '/login',
     name: '登录',
@@ -29,7 +34,7 @@ const routes = [{
       {
         path: 'movieDetail',
         name: '电影详情',
-        component: () => import("@/views/movie/movieDetail.vue")
+        component: MovieDetail
       }
     ]
 }, {
@@ -41,11 +46,20 @@ const routes = [{
     }
 }, {
     path: '/user',
-    name: '用户',
+    // name: '用户',
     component: User,
     meta: {
         requireAuth: true
-    }
+    },
+    children:[{
+    	path:'',
+    	name:'用户',
+    	component:UserIndex
+    },{
+    	path:'userResponse',
+    	name:'用户反馈',
+    	component:UserResponse
+    }]
 },{
 	path:'/Search',
 	name:'搜索',
