@@ -11,8 +11,12 @@
         </template>
       </van-nav-bar>
       <van-swipe class="swiper" @change="onChange">
-        <van-swipe-item class="swiper-item" v-for="(item, index) in images" :key="index" @click.native="toMovieDetail(item)">
-          <img :src="item.images.small">
+        <van-swipe-item
+          class="swiper-item"
+          v-for="(banner, index) in banners"
+          :key="index"
+        >
+          <img :src="banner">
         </van-swipe-item>
         <ul class="swiper-indicator" slot="indicator">
           <li
@@ -69,7 +73,12 @@ export default {
   data() {
     return {
       current: 0,
-      images: [],
+      banners:[
+        '../../static/images/banner-1.jpg',
+        '../../static/images/banner-2.jpg',
+        '../../static/images/banner-3.jpg',
+        '../../static/images/banner-4.jpg',
+      ],
       in_theaters: [],
       coming_soon: [],
       top250: [],
@@ -101,12 +110,6 @@ export default {
         this.top250 = res.data.subjects;
       });
     },
-    showMovieList() {
-      this.$axios.get("/api/v2/movie/top250?start=21&count=4").then(res => {
-        this.images = res.data.subjects
-        console.log(this.images)
-      });
-    },
     toMovieDetail(item) {
       this.$router.push({
         name: "电影详情",
@@ -134,7 +137,6 @@ export default {
   width: 100%;
 }
 .swiper {
-  height: 3rem;
   position: relative;
 }
 .swiper-item {
@@ -148,7 +150,7 @@ export default {
 .swiper-indicator {
   position: absolute;
   right: 0.5rem;
-  bottom: 0.2rem;
+  bottom: 0.4rem;
 }
 .swiper-indicator li {
   width: 0.15rem;
@@ -159,6 +161,6 @@ export default {
   margin-left: 0.2rem;
 }
 .swiper-indicator li.active {
-  background: red;
+  background: #506cec;
 }
 </style>

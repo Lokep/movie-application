@@ -1,13 +1,5 @@
 <style>
-	.search-return{
-		line-height: 1rem;
-		font-size: .4rem;
-		width: 7.2rem;
-	}
-	.search-return>i{
-		font-size: inherit;
-		line-height: inherit;
-	}
+	
 	.search-history{
 		width: 200%;
 	}
@@ -52,9 +44,7 @@
 </style>
 <template>
 	<div class="search">
-		<div class="search-return ov">
-			<i class="fa fa-long-arrow-left fl" @click='historyBack'></i>
-		</div>
+		<HistoryBack></HistoryBack>
 		<SearchPart></SearchPart>
 		<!-- 最近搜索 -->
 		<h5 class="search-history-title">最近搜索</h5>
@@ -97,6 +87,8 @@
 </template>
 <script>
 	import SearchPart from '../components/searchPart/searchPart.vue'
+	import HistoryBack from '../components/historyBack/historyBack.vue'
+
 	export default{
 		data(){
 			return {
@@ -104,22 +96,14 @@
 			}
 		},
 		components:{
-			SearchPart
+			SearchPart,
+			HistoryBack
 		},
 		methods:{
-			historyBack(){
-				this.$router.back();
-			}
+			
 		},
 		computed: {
-			// RandomColor(index) {
-			// 	let r, g, b;
-			// 	r = Math.floor(Math.random() * 256);
-			// 	g = Math.floor(Math.random() * 256);
-			// 	b = Math.floor(Math.random() * 256);
-			// 	return "rgb(" +r + ',' +g+ ',' +b+ ")";
-
-			// }
+			
 		}
 
 	}

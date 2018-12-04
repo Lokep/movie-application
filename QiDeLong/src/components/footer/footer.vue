@@ -39,7 +39,7 @@
       </van-col>
       <van-col span="6">
         <router-link class="footer-link" to="/movie">
-          <i class="fa fa-camera" style="font-size: .475rem"></i>
+          <i class="fa fa-youtube-play"></i>
         </router-link>
       </van-col>
       <van-col span="6">
