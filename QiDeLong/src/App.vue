@@ -3,7 +3,7 @@
     <div style="padding-bottom: 50px;">
       <router-view/>
     </div>
-		<Footer></Footer>	
+		<Footer v-if="$route.meta.tabBar"></Footer>	
   </div>
 </template>
 

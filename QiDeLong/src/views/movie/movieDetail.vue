@@ -21,7 +21,6 @@
     left: 0;
     display: flex;
     flex-direction: column;
-    padding-top: 1rem;
 }
 .main-title {
     font-size: .4rem;
@@ -134,15 +133,26 @@
     text-align: center;
     white-space: normal;
 }
-.cast-imgs {
-    white-space: nowrap;
-}
-.cast-img {
-    width: 1.7rem;
-    height: 2.1rem;
-}
+
+
 .cast-name {
     margin: .1rem auto 0;
+}
+.cast-list {
+  width: 100%;
+  overflow-x: auto;
+  margin-bottom: .3rem;
+  white-space: nowrap;
+}
+
+.cast-list li {
+  float: left;
+  width: 30%;
+  margin-right: 3%;
+  margin-bottom: .2rem;
+}
+.cast-img {
+  width: 100%;
 }
 </style>
 <template>
@@ -201,20 +211,12 @@
       <div class="hr"></div>
       <div class="cast">
         <span class="cast-font"> 影人</span>
-        <!-- <van-tabs>
-          <van-tab v-for="(item, index) in movieDetail.casts" :key="index" :line-width="0">
-            <img :src="item.avatars.small" alt="" srcset="">
-          </van-tab>
-        </van-tabs> -->
+        <ul class="cast-list">
+          <li v-for="(item, index) in movieDetail.casts" :key="index">
+            <img class="cast-img" :src="item.avatars.small" alt="" srcset="">
+          </li>
+        </ul>
       </div>
-        <!-- <scroll-view class="cast-imgs" scroll-x="true" style="width:100%">
-      <block wx:for="{{movie.castsInfo}}" wx:for-item="item">
-        <view class="cast-container">
-          <image class="cast-img" src="{{item.img}}"></image>
-          <text class="cast-name">{{item.name}}</text>
-        </view>
-      </block>
-    </scroll-view>-->
     </div>
   </div>
 </template>
@@ -238,8 +240,7 @@ export default {
     getMovieDetail(id) {
       this.$axios.get("/api/v2/movie/subject/" + id)
       .then(res => {
-         this.movieDetail = res.data
-         console.log(this.movieDetail)
+        this.movieDetail = res.data
         this.rate = Math.round(this.movieDetail.rating.average / 2)
       });
     }
