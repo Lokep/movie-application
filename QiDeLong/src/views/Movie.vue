@@ -20,7 +20,7 @@
         </van-swipe-item>
         <ul class="swiper-indicator" slot="indicator">
           <li
-            v-for="(banner, index) in banners"
+            v-for="(image, index) in images"
             :key="index"
             :class="index == current ? 'active' : ''"
           ></li>
@@ -89,7 +89,7 @@ export default {
     this.get_coming_soon();
     this.get_in_theaters();
     this.get_mtop250();
-    // this.showMovieList();
+    this.showMovieList();
   },
   methods: {
     onChange(index) {

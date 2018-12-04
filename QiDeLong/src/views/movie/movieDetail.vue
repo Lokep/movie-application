@@ -1,8 +1,12 @@
 <style scoped>
+.back_tab {
+  margin-bottom: 10px;
+}
 .container {
     display: flex;
     flex-direction: column;
     font-size: .3rem;
+    position: relative;
 }
 .head-img {
     width: 100%;
@@ -142,8 +146,9 @@
 </style>
 <template>
   <div class="movie-detail">
-    <HistoryBack></HistoryBack>
-
+    <div class="back_tab">
+      <HistoryBack></HistoryBack>
+    </div>
     <div class="container">
       <img class="head-img" :src="movieDetail.images.large" />
       <div class="head-img-hover">
