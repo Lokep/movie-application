@@ -79,7 +79,6 @@ export default {
         '../../static/images/banner-3.jpg',
         '../../static/images/banner-4.jpg',
       ],
-      images: [],
       in_theaters: [],
       coming_soon: [],
       top250: [],
@@ -109,15 +108,6 @@ export default {
     get_mtop250() {
       this.$axios.get("/api/v2/movie/top250").then(res => {
         this.top250 = res.data.subjects;
-      });
-    },
-    showMovieList() {
-      this.$axios.get("/api/v2/movie/coming_soon").then(res => {
-        let arr = res.data.subjects,
-          that = this;
-        for (let i = 0; i < 3; i++) {
-          that.images.push(arr[i].images.small);
-        }
       });
     },
     toMovieDetail(item) {
