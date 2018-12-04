@@ -3,6 +3,8 @@
 		line-height: 1rem;
 		font-size: .4rem;
 		width: 7.2rem;
+		padding: 0 .15rem;
+		background-color: rgba(255,255,255,.6);
 	}
 	.search-return>i{
 		font-size: inherit;

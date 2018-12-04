@@ -142,6 +142,8 @@
 </style>
 <template>
   <div class="movie-detail">
+    <HistoryBack></HistoryBack>
+
     <div class="container">
       <img class="head-img" :src="movieDetail.images.large" />
       <div class="head-img-hover">
@@ -206,6 +208,7 @@
   </div>
 </template>
 <script>
+import HistoryBack from '../../components/historyBack/historyBack.vue'  
 export default {
   data() {
     return {
@@ -213,6 +216,9 @@ export default {
       rate: null,
       imgSrc: {}
     }
+  },
+  components:{
+    HistoryBack
   },
   mounted() {
     this.getMovieDetail(this.$route.query.id)
