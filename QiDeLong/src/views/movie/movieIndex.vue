@@ -1,6 +1,5 @@
 <template>
   <div class="movieIndex">
-    <div>
       <van-nav-bar>
         <template slot="left">
           <span class="page-title">影片大全</span>
@@ -60,8 +59,6 @@
           ></movie-grid>
         </van-tab>
       </van-tabs>
-    </div>
-    <router-view></router-view>
   </div>
 </template>
 <script>
@@ -89,7 +86,6 @@ export default {
     this.get_coming_soon();
     this.get_in_theaters();
     this.get_mtop250();
-    // this.showMovieList();
   },
   methods: {
     onChange(index) {

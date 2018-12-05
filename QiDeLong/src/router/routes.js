@@ -24,20 +24,22 @@ const routes = [{
     component: Home,
     alias:'/index',
     meta: {
-        requireAuth: true
+        requireAuth: true,
+        tabBar: true
     },
     children: []
 }, {
     path: '/movie',
     // name: '电影',
     component: Common,
-    meta: {
-        requireAuth: true
-    },
     children: [{
     	path:'',
     	name: '电影',
-    	component:MovieIndex
+      component:MovieIndex,
+      meta: {
+        requireAuth: true,
+        tabBar: true
+      }
     },{
         path: 'movieDetail',
         name: '电影详情',
@@ -49,19 +51,21 @@ const routes = [{
     name: '社区',
     component: Social,
     meta: {
-        requireAuth: true
+        requireAuth: true,
+        tabBar: true
     }
 }, {
     path: '/user',
     // name: '用户',
     component: Common,
-    meta: {
-        requireAuth: true
-    },
     children:[{
     	path:'',
     	name:'用户',
-    	component:UserIndex
+      component:UserIndex,
+      meta: {
+        requireAuth: true,
+        tabBar: true
+      }
     },{
     	path:'userResponse',
     	name:'用户反馈',
