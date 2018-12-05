@@ -1,15 +1,18 @@
 import Login from '@/views/Login'
 import Home from '@/views/Home'
 import Social from '@/views/Social'
-// import Movie from '@/views/Movie'
-import Common from '@/views/CommonTemplate'
 import Search from '@/views/Search'
+
+import Common from '@/views/CommonTemplate'
+
 
 // 子组件
 import MovieIndex from '@/views/movie/movieIndex.vue'
-import UserIndex from '@/views/user/userIndex.vue'
 import MovieDetail from '@/views/movie/movieDetail.vue'
+import UserIndex from '@/views/user/userIndex.vue'
 import UserResponse from '@/views/user/userResponse.vue'
+// import SearchDefault from '@/views/search/searchDefault.vue'
+// import SearchResult from '@/views/search/searchResult.vue'
 
 const routes = [{
     path: '/login',
@@ -66,8 +69,8 @@ const routes = [{
     }]
 },{
 	path:'/Search',
-	name:'搜索',
 	component:Search,
+	name:'搜索'
 }]
 
 

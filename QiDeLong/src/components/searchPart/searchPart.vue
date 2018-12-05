@@ -16,7 +16,7 @@
 </style>
 <template>
 	<div class="home-search ov" @click="homeRedirect">
-		<input :readoly='pathBool' class="fl" placeholder="请输入影片">
+		<input :readonly='readOnly' class="fl" placeholder="请输入影片">
 		<van-icon name="search" class="fr home-search-icon"/>
 	</div>	
 </template>
@@ -24,21 +24,24 @@
 	export default {
 		data(){
 			return{
-				pathBool:true
+				readOnly:false,//the search input can`t be typed in the home page,
+				searchViewBool:true
 			}
 		},
 		methods:{
 			homeRedirect(){
-				
-				if(this.$route.path=='/'){
+				let path = this.$route.path.toLowerCase()
+				if(path=='/'||path =='/index'){
 					this.$router.push('/Search')
+				}else if(path == '/search'){
+					
 				}
 
 			},
 		},
 		mounted(){
 			if(this.$route.path=='/'||this.$route.path=='/index'){
-				this.pathBool=false
+				this.readOnly=true
 			}	
 		}
 	}
