@@ -11,6 +11,8 @@ import MovieDetail from '@/views/movie/movieDetail.vue'
 // 用户组件
 import UserIndex from '@/views/user/userIndex.vue'
 import UserResponse from '@/views/user/userResponse.vue'
+// import SearchDefault from '@/views/search/searchDefault.vue'
+// import SearchResult from '@/views/search/searchResult.vue'
 
 // 社区组件
 import SocialIndex from '@/views/social/socialIndex.vue'
@@ -82,8 +84,8 @@ const routes = [{
     }]
 },{
 	path:'/Search',
-	name:'搜索',
 	component:Search,
+	name:'搜索'
 }]
 
 
