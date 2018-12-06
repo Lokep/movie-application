@@ -70,9 +70,7 @@ export default {
     beforeMount() {
         let hasFooter = this.$route.matched[0].meta.hasFooter;
         hasFooter=hasFooter==undefined?true:hasFooter;
-        console.log(hasFooter);
         this.show = hasFooter
-
     }
 };
 
