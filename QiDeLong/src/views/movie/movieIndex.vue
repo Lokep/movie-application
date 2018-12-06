@@ -1,14 +1,9 @@
 <template>
   <div class="movieIndex">
-      <van-nav-bar>
-        <template slot="left">
-          <span class="page-title">影片大全</span>
-        </template>
-        <template slot="right">
-          <van-icon class="search-icon" size=".36rem" color="#1a1f25" name="search"/>
-          <van-icon size=".36rem" color="#1a1f25" name="wap-nav"/>
-        </template>
-      </van-nav-bar>
+      
+      <TopBar :topBarInfo="movieTopBar"></TopBar>
+
+
       <van-swipe class="swiper" @change="onChange">
         <van-swipe-item
           class="swiper-item"
@@ -62,10 +57,11 @@
   </div>
 </template>
 <script>
-import movieGrid from "@/components/movie/movieGrid.vue";
+import TopBar from '@/components/topBar/topBar.vue' 
+import movieGrid from "@/components/movie/movieGrid.vue"
 export default {
   components: {
-    movieGrid
+    movieGrid,TopBar
   },
   data() {
     return {
@@ -79,7 +75,19 @@ export default {
       in_theaters: [],
       coming_soon: [],
       top250: [],
-      active: 0
+      active: 0,
+      movieTopBar:{
+          Title:'影片大全',
+          subTitle:'',
+          icons:[{
+            icon:'fa-search',
+            href:'/Search'
+          },{
+            icon:'fa-bars'
+          }],
+          description:''
+        
+      }
     };
   },
   mounted() {

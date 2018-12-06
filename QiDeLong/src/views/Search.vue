@@ -2,12 +2,12 @@
 	
 </style>
 <template>
-	<div class="search" @click.stop.prevent="searchViewOff" >
+	<div class="search">
 		<HistoryBack></HistoryBack>
-		<SearchPart @click.stop.prevent="searchViewOn"></SearchPart>
+		<SearchPart></SearchPart>
 		<!-- 最近搜索 -->
-		<SearchDefault v-show="show"></SearchDefault>
-		<SearchResult v-show="revers"></SearchResult>
+		<SearchDefault></SearchDefault>
+		<SearchResult></SearchResult>
 
 		<router-view></router-view>
 	</div>
@@ -23,7 +23,7 @@
 	export default{
 		data(){
 			return {
-				show:true
+				
 			}
 		},
 		components:{
@@ -33,20 +33,13 @@
 			SearchResult
 		},
 		methods:{
-			searchViewOn(){
-				this.show = false
-			},
-			searchViewOff(){
-				this.show = true
-			}
+
 		},
 		mounted(){
 			
 		},
 		computed: {
-			revers(){
-				return !this.show;
-			}
+			
 		}
 
 	}

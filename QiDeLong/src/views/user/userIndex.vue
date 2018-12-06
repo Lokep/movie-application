@@ -1,9 +1,5 @@
 <!-- lokep 12-03 -->
 <style>
-	.home-sub-title{
-		font-size: .36rem;
-		color: #000;
-	}
 	.userBox{
 		border-top:1px solid #e6e6e6;
 	}
@@ -72,9 +68,16 @@
 		font-size: .3rem;
 	}
 	.sys-menu i{
-		float: right;
 		font-size: .4rem;
 		line-height: inherit;
+		
+	}
+	.sys-menu-icon{
+		width: .5rem;
+		text-align: center;
+		margin-right: .1rem;
+		float: left;
+		font-size: .32rem!important;
 	}
 	.shareApp{
 		margin: 0 auto;
@@ -89,12 +92,13 @@
 </style>
 <template>
     <div class="userIndex">
- 		<div class="home-head">
+ 		<!-- <div class="home-head">
  			<h4 class="home-title fl">我的</h4>
 			<router-link to="../Message" class="home-sub-title fr">
 				<span class="fa fa-bell"></span>
 			</router-link>
- 		</div>
+ 		</div> -->
+ 		<TopBar :topBarInfo="userTopBar"></TopBar>
  		<div class="userBox">
  			<!-- userInfo -->
  			<div class="user-card ov">
@@ -104,7 +108,7 @@
  				</div>
  				
  				<!-- 编辑资料 -->
- 				<router-link class="fr user-link" to="/">
+ 				<router-link class="fr user-link" to="/user/userEditInfo?title=编辑个人资料">
  					<div class="user-name ov"><h5>进击的小M</h5> <i>观影达人</i></div>
  					<span class="user-signature">乘风破浪会有时，直挂云帆济沧海</span>
  				</router-link>	
@@ -144,31 +148,37 @@
 			
 			<ul class="sys-menu common-width">
 				<router-link to="/" tag="li">
+					<i class="sys-menu-icon fa fa-tags"></i>
 					<span>我发布的主题</span>
-					<i class="fa fa-caret-right"></i>
+					<i class="fr fa fa-caret-right"></i>
 				</router-link>
 				<router-link to="/" tag="li">
+					<i class="sys-menu-icon fa fa-bookmark"></i>
 					<span>我参与的话题</span>
-					<i class="fa fa-caret-right"></i>
+					<i class="fr fa fa-caret-right"></i>
 				</router-link>
 				<router-link to="/" tag="li">
+					<i class="sys-menu-icon fa fa-heart"></i>
 					<span>我喜欢的电影</span>
-					<i class="fa fa-caret-right"></i>
+					<i class="fr fa fa-caret-right"></i>
 				</router-link>
 			</ul>
 
 			<ul class="sys-menu common-width">
 				<router-link to="/User/userResponse?title=帮助与反馈" tag="li">
+					<i class="sys-menu-icon fa fa-envelope"></i>
 					<span>帮助与反馈</span>
-					<i class="fa fa-caret-right"></i>
+					<i class="fr fa fa-caret-right"></i>
 				</router-link>
 				<li @click="shareAPP()">
+					<i class="sys-menu-icon fa fa-share"></i>
 					<span>分享APP</span>
-					<i class="fa fa-caret-right"></i>
+					<i class="fr fa fa-caret-right"></i>
 				</li>
 				<router-link to="/" tag="li">
+					<i class="sys-menu-icon fa fa-cog"></i>
 					<span>我的设置</span>
-					<i class="fa fa-caret-right"></i>
+					<i class="fr fa fa-caret-right"></i>
 				</router-link>
 			</ul>
  		</div>
@@ -200,17 +210,27 @@
     </div>
 </template>
 <script>
+import TopBar from '../../components/topBar/topBar.vue'
 export default {
     data() {
         return {
         	show:false,
         	actions:[{
         		name:'分享'
-        	}]
+        	}],
+        	userTopBar:{
+        		Title:'我的',
+        		subTitle:'',
+        		icons:[{
+        			icon:'fa-bell',
+        			href:'/Message'
+        		}],
+        		description:''
+        	}
         }
     },
     components: {
-
+    	TopBar
     },
     methods:{
     	shareAPP(){
@@ -218,5 +238,8 @@ export default {
     	}
     }
 }
+
+
+
 
 </script>

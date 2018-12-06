@@ -9,6 +9,9 @@ import 'vant/lib/index.css'
 import Meta from 'vue-meta'
 import { Lazyload } from 'vant'
 
+// common.css
+import '../static/styles/common.css'
+
 
 Vue.use(Vant)
 Vue.use(Meta)

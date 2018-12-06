@@ -11,8 +11,10 @@ import MovieIndex from '@/views/movie/movieIndex.vue'
 import MovieDetail from '@/views/movie/movieDetail.vue'
 import UserIndex from '@/views/user/userIndex.vue'
 import UserResponse from '@/views/user/userResponse.vue'
-// import SearchDefault from '@/views/search/searchDefault.vue'
-// import SearchResult from '@/views/search/searchResult.vue'
+import UserEditInfo from '@/views/user/userEditInfo.vue'
+
+//tabBar =>页面中是否有底部导航
+
 
 const routes = [{
     path: '/login',
@@ -30,7 +32,6 @@ const routes = [{
     children: []
 }, {
     path: '/movie',
-    // name: '电影',
     component: Common,
     children: [{
     	path:'',
@@ -70,6 +71,13 @@ const routes = [{
     	path:'userResponse',
     	name:'用户反馈',
     	component:UserResponse
+    },{
+    	path:'userEditInfo',
+    	name:'用户信息编辑',
+    	component:UserEditInfo,
+    	meta:{
+    		tabBar:false
+    	}
     }]
 },{
 	path:'/Search',

@@ -3,28 +3,6 @@
     text-align: center;
 }
 
-.home-head {
-    width: 6.7rem;
-    height: 1.05rem;
-    margin: 0 auto;
-}
-
-.home-title,
-.home-sub-title {
-    vertical-align: bottom;
-    display: inline-block;
-    line-height: 1.05rem;
-}
-
-.home-title {
-    font-size: .4rem;
-}
-
-.home-sub-title {
-    font-size: .28rem;
-    color: #ababab;
-}
-
 .home-swiper {
     height: 10.35rem;
 }
@@ -63,10 +41,11 @@
 </style>
 <template>
     <div class="home">
-        <div class="home-head ov">
+    	<TopBar :topBarInfo="homeTopBar"></TopBar>
+        <!-- <div class="home-head ov">
             <h4 class="home-title fl">轻影</h4>
             <span class="home-sub-title fr">深夜记得早点睡</span>
-        </div>
+        </div> -->
         <!-- <div class="home-search ov">
 			<input class="fl" placeholder="请输入影片" @focus="homeRedirect">
 			<van-icon name="search" class="fr home-search-icon"/>
@@ -86,14 +65,25 @@
     </div>
 </template>
 <script>
+import TopBar from '../components/topBar/topBar.vue'
 import SearchPart from '../components/searchPart/searchPart.vue'
 export default {
     data() {
         return {
             lists: [],
+            homeTopBar:{
+        		Title:'轻影',
+        		subTitle:'',
+        		icons:[{
+        			icon:'',
+        			href:''	
+        		}],
+        		description:'深夜记得早点睡'
+            }
         }
     },
     components: {
+    	TopBar,
         SearchPart
     },
     metaInfo: {
