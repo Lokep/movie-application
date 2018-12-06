@@ -2,7 +2,11 @@ import Login from '@/views/Login'
 import Home from '@/views/Home'
 // import Movie from '@/views/Movie'
 import Common from '@/views/CommonTemplate'
+
+// 搜索组件
 import Search from '@/views/Search'
+// import SearchDefault from '@/views/search/searchDefault.vue'
+// import SearchResult from '@/views/search/searchResult.vue'
 
 // 电影组件
 import MovieIndex from '@/views/movie/movieIndex.vue'
@@ -11,8 +15,7 @@ import MovieDetail from '@/views/movie/movieDetail.vue'
 // 用户组件
 import UserIndex from '@/views/user/userIndex.vue'
 import UserResponse from '@/views/user/userResponse.vue'
-// import SearchDefault from '@/views/search/searchDefault.vue'
-// import SearchResult from '@/views/search/searchResult.vue'
+
 
 // 社区组件
 import SocialIndex from '@/views/social/socialIndex.vue'
