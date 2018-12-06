@@ -1,16 +1,19 @@
 import Login from '@/views/Login'
 import Home from '@/views/Home'
-import Social from '@/views/Social'
 // import Movie from '@/views/Movie'
 import Common from '@/views/CommonTemplate'
 import Search from '@/views/Search'
 
-// 子组件
+// 电影组件
 import MovieIndex from '@/views/movie/movieIndex.vue'
-import UserIndex from '@/views/user/userIndex.vue'
 import MovieDetail from '@/views/movie/movieDetail.vue'
+
+// 用户组件
+import UserIndex from '@/views/user/userIndex.vue'
 import UserResponse from '@/views/user/userResponse.vue'
 
+// 社区组件
+import SocialIndex from '@/views/social/socialIndex.vue'
 const routes = [{
     path: '/login',
     name: '登录',
@@ -45,12 +48,21 @@ const routes = [{
     ]
 }, {
     path: '/social',
-    name: '社区',
-    component: Social,
-    meta: {
-        requireAuth: true,
-        tabBar: true
-    }
+    component: Common,
+    children: [
+      {
+        path: '',
+        name: '社区',
+        component: SocialIndex,
+        meta: {
+          requireAuth: true,
+          tabBar: true
+        }
+      }, {
+        path: ''
+      }
+    ]
+    
 }, {
     path: '/user',
     // name: '用户',
