@@ -1,13 +1,6 @@
 <template>
   <div class="social">
-    <van-nav-bar style="padding-top: .1rem;" :border="false">
-      <template slot="left">
-        <span class="social-title">社区</span>
-      </template>
-      <template slot="right">
-        <van-icon class="edit" name="edit" color="#1a1f25" size=".46rem" />
-      </template>
-    </van-nav-bar>
+    <TopBar :topBarInfo="socialTopBar"></TopBar>
     <van-tabs class="social-tab" v-model="active" sticky color="#506cec">
       <van-tab title="热门推荐">
         <social-hot></social-hot>
@@ -30,16 +23,26 @@ import socialHot from './socialHot'
 import socialDynamic from './socialDynamic'
 import socialTopic from './socialTopic'
 import socialCity from './socialCity'
+import TopBar from '@/components/topBar/topBar.vue' 
 export default {
   components: {
     socialHot,
     socialDynamic,
     socialTopic,
-    socialCity
+    socialCity,
+    TopBar
   },
   data() {
     return {
-      active: 0
+      active: 0,
+      socialTopBar: {
+        Title:'社区',
+          subTitle:'',
+          icons:[{
+            icon:'fa-edit'
+          }],
+          description:''
+      }
     }
   }
 }
