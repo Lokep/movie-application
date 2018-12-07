@@ -22,7 +22,7 @@
 	}
 	.edit-userName{
 		font-size: .32rem;
-		margin: .2rem auto;
+		margin: .2rem auto .75rem;
 		max-width: 4rem;
 		padding: 0 .2rem;
 		overflow: hidden;
@@ -42,11 +42,14 @@
 	}
 	.edit-list{
 		background-color: pink;
-		margin-bottom: 1rem;
+		margin-bottom: .2rem;
 		height: .7rem
 	}
-	.edit-list>span{
+	.edit-list>.edit-list-title{
 		font-size: .32rem;
+		line-height: .7rem;
+		float: left;
+		width: 1.3rem;
 	}
 </style>
 <template>
@@ -63,14 +66,23 @@
 			<span class="edit-userName fa fa-pencil-square-o" contenteditable :style="{width:name.length+'em'}">{{name}}</span>
 			<div class="edit-form common-width">
 				<div class="edit-list">
-					<span class="fl">性别</span>
-					<div class="edit-list-content"></div>
+					<span class="edit-list-title">性别</span>
+					<!-- <van-radio-group class="edit-list-content" >
+
+						
+						
+					</van-radio-group> -->
+
+					<input type="radio" style="display: block;width: .2rem;height: .2rem;" name="sex" value="男" v-model="sex" :class="sex">
+					<input type="radio" style="display: block;width: .2rem;height: .2rem;" name="sex" value="女" v-model="sex" :class="sex">
+					<span>{{sex}}</span>
 				</div>
 				<div class="edit-list">
-					<span>sdafasd</span>
+					<span class="edit-list-title"></span>
 				</div>
 			</div>
 				
+
 		</div>
 	</div>
 </template>
@@ -80,19 +92,17 @@
 		data(){
 			return{
 				name:'Lokep',
-				radio:''
+				sex:'nan'
 			}
 		},
 		components:{
 			HistoryBack
 		},
 		mounted(){
-			console.log(this.name.length+'em');
+			
 		},
 		methods:{
-			onRead(){
-
-			}
+			
 		}
 	}
 </script>
