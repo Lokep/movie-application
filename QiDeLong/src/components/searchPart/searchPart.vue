@@ -6,9 +6,10 @@
 		border-bottom: 1px solid #b6b6b6;
 	}
 	.home-search>input{
-		height: .4rem;
 		width: 5rem;
-		padding: .2rem 0;
+		height: .8rem;
+		line-height: .36rem;
+		font-size: .28rem;
 	}
 	.home-search-icon{
 		margin:.3rem .2rem 0 0;

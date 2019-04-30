@@ -13,13 +13,20 @@ module.exports = {
     assetsPublicPath: '/', 
     proxyTable: {
       '/api': {
-        // target:'http://t.yushu.im',
         target:'https://api.douban.com',
         changeOrigin:true,
         pathRewrite:{
           '^/api': '/'
         }
+      },
+      '/zhihu':{
+        target:'https://news-at.zhihu.com',
+        changeOrigin:true,
+        pathRewrite:{
+            '^/zhihu':'/'
+        }
       }
+
     },
 
     // Various Dev Server settings
